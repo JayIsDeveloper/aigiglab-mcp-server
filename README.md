@@ -9,7 +9,7 @@ This server allows AI assistants (like Claude, Cursor, and others) to natively i
 ### Prerequisites
 You need an **AIGigLab API Key**. 
 1. Sign up or log in at [aigiglab.com](https://aigiglab.com).
-2. Grab your API Key from the documentation page here: [https://aigiglab.com/api-docs](https://aigiglab.com/api-docs).
+2. Grab your API Key from the developer dashboard here: [https://aigiglab.com/developers/api-keys](https://aigiglab.com/developers/api-keys).
 
 ### Installation via Cursor
 To connect this MCP server to your Cursor IDE:
