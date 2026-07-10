@@ -1,6 +1,6 @@
 {
     "name": "@aigiglab-org/mcp-server",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Official Model Context Protocol (MCP) server for AIGigLab.",
     "type": "module",
     "main": "src/index.js",
