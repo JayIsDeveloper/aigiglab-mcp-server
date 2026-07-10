@@ -6,7 +6,7 @@ export function registerLinkedInTools(server) {
     server.tool(
         "get_linkedin_auth_urls",
         "Get the OAuth connection URLs to connect a personal LinkedIn profile or a Company Page.",
-        z.object({}),
+        {},
         async () => {
             try {
                 const personalRes = await apiClient.get('/linkedin/auth-url');
@@ -29,7 +29,7 @@ export function registerLinkedInTools(server) {
     server.tool(
         "get_linkedin_config",
         "Get the current LinkedIn automation configuration, connection status, stats, and recent logs.",
-        z.object({}),
+        {},
         async () => {
             try {
                 const response = await apiClient.get('/linkedin/config');
@@ -115,7 +115,7 @@ export function registerLinkedInTools(server) {
     server.tool(
         "trigger_linkedin_post_now",
         "Immediately generate and post content to LinkedIn using your current configuration and available credits.",
-        z.object({}),
+        {},
         async () => {
             try {
                 const response = await apiClient.post('/linkedin/post-now', {});
@@ -167,7 +167,7 @@ export function registerLinkedInTools(server) {
     server.tool(
         "get_linkedin_pages",
         "Get available LinkedIn Company Pages that the user manages.",
-        z.object({}),
+        {},
         async () => {
             try {
                 const response = await apiClient.get('/linkedin/pages');
