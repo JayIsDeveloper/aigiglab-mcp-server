@@ -36,7 +36,7 @@ export function registerElevenLabsTools(server) {
         }
     );
 
-    server.tool(
+    /* server.tool(
         "list_models",
         "List available ElevenLabs models for speech synthesis.",
         {},
@@ -65,7 +65,7 @@ export function registerElevenLabsTools(server) {
                 };
             }
         }
-    );
+    ); */
 
     server.tool(
         "synthesize_voice",
@@ -87,7 +87,7 @@ export function registerElevenLabsTools(server) {
                 const filePath = path.join(AUDIO_DIR, filename);
 
                 fs.writeFileSync(filePath, audioBuffer);
-                console.log(`[ElevenLabs] 💾 Audio saved to: ${filePath}`);
+                console.error(`[ElevenLabs] 💾 Audio saved to: ${filePath}`);
 
                 return {
                     content: [
@@ -291,7 +291,7 @@ export function registerElevenLabsTools(server) {
         }
     );
 
-    server.tool(
+    /* server.tool(
         "text_to_sound_effects",
         "Generate high-quality sound effects from a text description.",
         {
@@ -326,5 +326,5 @@ export function registerElevenLabsTools(server) {
                 };
             }
         }
-    );
+    ); */
 }

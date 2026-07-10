@@ -148,7 +148,7 @@ export function registerLeadTools(server) {
                 const filePath = path.join(UPLOAD_DIR, filename);
 
                 fs.writeFileSync(filePath, Buffer.from(response.data));
-                console.log(`[Leads] 📊 CSV Export saved to: ${filePath}`);
+                console.error(`[Leads] 📊 CSV Export saved to: ${filePath}`);
 
                 return {
                     content: [{

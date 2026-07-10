@@ -3,28 +3,7 @@ import { apiClient } from "../api.js";
 
 export function registerLinkedInTools(server) {
 
-    server.tool(
-        "get_linkedin_auth_urls",
-        "Get the OAuth connection URLs to connect a personal LinkedIn profile or a Company Page.",
-        {},
-        async () => {
-            try {
-                const personalRes = await apiClient.get('/linkedin/auth-url');
-                const companyRes = await apiClient.get('/linkedin/company-auth-url');
-                return {
-                    content: [{ 
-                        type: "text", 
-                        text: `LinkedIn Authentication URLs:\n\nPersonal Profile: ${personalRes.data.url}\n\nCompany Page: ${companyRes.data.url}\n\nPlease click the appropriate link to connect your account.`
-                    }]
-                };
-            } catch (error) {
-                return {
-                    content: [{ type: "text", text: `Error fetching auth URLs: ${error.response?.data?.message || error.message}` }],
-                    isError: true
-                };
-            }
-        }
-    );
+
 
     server.tool(
         "get_linkedin_config",

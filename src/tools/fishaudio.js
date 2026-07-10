@@ -49,7 +49,7 @@ export function registerFishAudioTools(server) {
         }
     );
 
-    server.tool(
+    /* server.tool(
         "fish_synthesize_voice",
         "Generate audio using FishAudio TTS.",
         {
@@ -91,7 +91,7 @@ export function registerFishAudioTools(server) {
                 };
             }
         }
-    );
+    ); */
 
     server.tool(
         "fish_transcribe_audio",
