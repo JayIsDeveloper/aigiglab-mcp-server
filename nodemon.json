@@ -1,0 +1,7 @@
+{
+  "ignore": [
+    "uploads/*",
+    "generated_audio/*",
+    "node_modules/*"
+  ]
+}

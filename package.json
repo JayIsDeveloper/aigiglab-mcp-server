@@ -1,0 +1,34 @@
+{
+    "name": "@aigiglab/mcp-server",
+    "version": "1.0.0",
+    "description": "Official Model Context Protocol (MCP) server for AIGigLab.",
+    "type": "module",
+    "main": "src/index.js",
+    "bin": {
+        "aigiglab-mcp-server": "src/index.js"
+    },
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js",
+        "inspector": "npx @modelcontextprotocol/inspector node src/index.js"
+    },
+    "keywords": [
+        "mcp",
+        "ai",
+        "agent"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.0.0",
+        "axios": "^1.6.0",
+        "docx": "^9.6.1",
+        "dotenv": "^16.3.0",
+        "express": "^5.2.1",
+        "form-data": "^4.0.5",
+        "zod": "^3.22.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    }
+}
