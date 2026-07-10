@@ -1,4 +1,4 @@
-# @aigiglab/mcp-server
+# @aigiglab-org/mcp-server
 
 The official Model Context Protocol (MCP) server for **AIGigLab**. 
 
@@ -20,7 +20,7 @@ To connect this MCP server to your Cursor IDE:
 3. Configure it as follows:
    - **Type:** `command`
    - **Name:** `AIGigLab`
-   - **Command:** `npx -y @aigiglab/mcp-server`
+   - **Command:** `npx -y @aigiglab-org/mcp-server`
    - **Environment Variables:**
      - Name: `AIGIGLAB_API_KEY`, Value: `YOUR_API_KEY_HERE`
 
@@ -34,7 +34,7 @@ Add the following configuration to your Claude Desktop `claude_desktop_config.js
       "command": "npx",
       "args": [
         "-y",
-        "@aigiglab/mcp-server"
+        "@aigiglab-org/mcp-server"
       ],
       "env": {
         "AIGIGLAB_API_KEY": "YOUR_API_KEY_HERE"
