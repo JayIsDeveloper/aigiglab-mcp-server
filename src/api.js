@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.API_BASE_URL || 'https://cs4ow08w8gso40wso4ck0ks0.console.aigiglab.com/api';
 const API_KEY = process.env.AIGIGLAB_API_KEY || process.env.MCP_API_KEY;
 
 if (!API_KEY) {
