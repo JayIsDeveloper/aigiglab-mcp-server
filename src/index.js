@@ -8,6 +8,7 @@ import { registerAssetTools } from "./tools/assets.js";
 import { registerThumbnailTools } from "./tools/thumbnail.js";
 import { registerLeadTools } from "./tools/leads.js";
 import { registerLinkedInTools } from "./tools/linkedin.js";
+import { registerProfileTools } from "./tools/profile.js";
 import express from "express";
 import dotenv from "dotenv";
 
@@ -37,6 +38,7 @@ registerAssetTools(server);
 registerThumbnailTools(server);
 registerLeadTools(server);
 registerLinkedInTools(server);
+registerProfileTools(server);
 
 // --- SSE Server ---
 const app = express();
