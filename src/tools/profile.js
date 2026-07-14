@@ -8,7 +8,7 @@ export function registerProfileTools(server) {
         {},
         async () => {
             try {
-                const response = await apiClient.get('/auth/check');
+                const response = await apiClient.get('/check');
                 const user = response.data.user || response.data;
                 
                 const profile = {
@@ -44,7 +44,7 @@ export function registerProfileTools(server) {
         },
         async (args) => {
             try {
-                const response = await apiClient.get('/auth/transactions', {
+                const response = await apiClient.get('/transactions', {
                     params: { page: args.page, limit: args.limit }
                 });
                 
@@ -72,7 +72,7 @@ export function registerProfileTools(server) {
         },
         async (args) => {
             try {
-                const response = await apiClient.get('/auth/usage', {
+                const response = await apiClient.get('/usage', {
                     params: { page: args.page, limit: args.limit }
                 });
                 

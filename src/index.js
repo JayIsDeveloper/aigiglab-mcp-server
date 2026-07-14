@@ -9,6 +9,9 @@ import { registerThumbnailTools } from "./tools/thumbnail.js";
 import { registerLeadTools } from "./tools/leads.js";
 import { registerLinkedInTools } from "./tools/linkedin.js";
 import { registerProfileTools } from "./tools/profile.js";
+import { registerReplicateTools } from "./tools/replicate.js";
+import { registerBrandOSTools } from "./tools/brandos.js";
+import { registerRemotionTools } from "./tools/remotion.js";
 import express from "express";
 import dotenv from "dotenv";
 
@@ -39,6 +42,9 @@ registerThumbnailTools(server);
 registerLeadTools(server);
 registerLinkedInTools(server);
 registerProfileTools(server);
+registerReplicateTools(server);
+registerBrandOSTools(server);
+registerRemotionTools(server);
 
 // --- SSE Server ---
 const app = express();
