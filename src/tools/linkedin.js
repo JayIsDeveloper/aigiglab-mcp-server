@@ -20,8 +20,15 @@ export function registerLinkedInTools(server) {
                 }
                 
                 // Delete referenceContent from topics to save tokens and prevent caching
-                if (data.config && Array.isArray(data.config.topics)) {
-                    data.config.topics.forEach(topic => {
+                if (data.personalConfig && Array.isArray(data.personalConfig.topics)) {
+                    data.personalConfig.topics.forEach(topic => {
+                        if (topic.referenceContent) {
+                            delete topic.referenceContent;
+                        }
+                    });
+                }
+                if (data.companyConfig && Array.isArray(data.companyConfig.topics)) {
+                    data.companyConfig.topics.forEach(topic => {
                         if (topic.referenceContent) {
                             delete topic.referenceContent;
                         }
@@ -44,10 +51,11 @@ export function registerLinkedInTools(server) {
         "update_linkedin_config",
         "Update LinkedIn automation configuration (e.g., topics, schedules, tone, post types).",
         {
+            targetConfig: z.enum(["personal", "company"]).optional().describe("Which configuration to update (personal or company). Defaults to personal."),
             isActive: z.boolean().optional().describe("Enable or disable the automation"),
             tone: z.enum(["Professional", "Casual", "Witty", "Controversial", "Storyteller", "Educational"]).optional().describe("Tone of voice"),
             targetAudience: z.string().optional().describe("Target audience description (e.g., 'Software Engineers', 'Startup Founders')"),
-            postTypes: z.enum(["text_only", "image_post", "carousel_post", "mixed"]).optional().describe("Type of posts to generate"),
+            postTypes: z.enum(["text_only", "image_post", "carousel_post", "gif_post", "mixed"]).optional().describe("Type of posts to generate"),
             carouselImageCount: z.number().min(2).max(5).optional().describe("Number of images for carousel_post (min 2, max 5)"),
             timezone: z.string().optional().describe("Timezone for scheduling (e.g., 'Asia/Calcutta')"),
             schedulingMode: z.enum(["daily", "weekly", "one_time"]).optional().describe("Scheduling mode"),
@@ -94,10 +102,12 @@ export function registerLinkedInTools(server) {
     server.tool(
         "trigger_linkedin_post_now",
         "Immediately generate and post content to LinkedIn using your current configuration and available credits.",
-        {},
-        async () => {
+        {
+            targetConfig: z.enum(["personal", "company"]).optional().describe("Which configuration to use to generate the post (personal or company). Defaults to personal.")
+        },
+        async (args) => {
             try {
-                const response = await apiClient.post('/linkedin/post-now', {});
+                const response = await apiClient.post('/linkedin/post-now', args);
                 return {
                     content: [{ type: "text", text: `Post triggered successfully!\n\nPost URN: ${response.data.urn}` }]
                 };

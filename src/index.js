@@ -48,7 +48,7 @@ registerRemotionTools(server);
 
 // --- SSE Server ---
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8300;
 let sseTransports = new Map();
 
 app.get("/sse", async (req, res) => {
